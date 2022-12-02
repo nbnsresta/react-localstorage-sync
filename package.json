@@ -1,8 +1,8 @@
 {
-  "version": "0.1.0",
-  "name": "react-localstorage-sync",
+  "version": "0.1.1",
+  "name": "use-localstorage-sync",
   "author": "Nabin Shrestha",
-  "module": "dist/react-localstorage-sync.esm.js",
+  "module": "dist/use-localstorage-sync.esm.js",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -38,11 +38,11 @@
   },
   "size-limit": [
     {
-      "path": "dist/react-localstorage-sync.cjs.production.min.js",
+      "path": "dist/use-localstorage-sync.cjs.production.min.js",
       "limit": "10 KB"
     },
     {
-      "path": "dist/react-localstorage-sync.esm.js",
+      "path": "dist/use-localstorage-sync.esm.js",
       "limit": "10 KB"
     }
   ],
