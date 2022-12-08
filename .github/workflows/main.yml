@@ -35,23 +35,24 @@ jobs:
     name: Build & Publish
     runs-on: ubuntu-latest
     needs: test
-    if: ${{ github.head_ref }} == feature/setup-ci-publish || github.ref_name }} == feature/setup-ci-publish
+    if: ${{ github.head_ref }} == main || github.ref_name }} == main
 
     steps:
-      - name: Logging
-        run: echo "Hello world"
-      # - name: Checkout to branch
-      #   uses: actions/checkout@v2
+      - name: Checkout to branch
+        uses: actions/checkout@v2
 
-      # - name: Setup environment
-      #   uses: actions/setup-node@v3
-      #   with:
-      #     node-version: 16
+      - name: Setup environment
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
 
-      # - name: Install dependencies
-      #   run: yarn
+      - name: Install dependencies
+        run: yarn
 
-      # - name: Build
-      #   run: yarn run build
-      # - name: Publish to Npm
-      #   uses: 
+      - name: Build
+        run: yarn run build
+      - name: Publish to Npm
+        uses: pascalgn/npm-publish-action@1.3.9
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
